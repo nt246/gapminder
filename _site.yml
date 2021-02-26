@@ -6,4 +6,6 @@ navbar:
       href: about.html
     - text: "Life expectancy"
       href: life_expectancy.html
+    - text: "Fertility"
+      href: fertility.html
 output_dir: "."
