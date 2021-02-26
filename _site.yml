@@ -1,0 +1,9 @@
+name: "gapminder"
+navbar:
+  title: "My gapminder exploration"
+  left:
+    - text: "About"
+      href: about.html
+    - text: "Life expectancy"
+      href: life_expectancy.html
+output_dir: "."

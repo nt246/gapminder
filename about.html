@@ -12,7 +12,7 @@
 <meta name="author" content="Nina" />
 
 
-<title>gapminder</title>
+<title>Overview</title>
 
 <script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -301,7 +301,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">gapminder</h1>
+<h1 class="title toc-ignore">Overview</h1>
 <h4 class="author">Nina</h4>
 <h4 class="date">2/26/2021</h4>
 
@@ -319,33 +319,6 @@ library(tidyverse)
 gap2011 &lt;- gapminder %&gt;% 
   as_tibble() %&gt;% 
   filter(year == 2011)</code></pre>
-</div>
-<div id="life-expectancy" class="section level1">
-<h1>Life expectancy</h1>
-<pre class="r"><code>ggplot(data = gap2011, mapping = aes(fertility, life_expectancy, color = continent)) +
-  geom_point() +
-  facet_wrap(~continent)</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<pre class="r"><code>ggplot(gapminder) +
-  geom_boxplot(aes(continent, life_expectancy))</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
-</div>
-<div id="fertility" class="section level1">
-<h1>Fertility</h1>
-<pre class="r"><code>ggplot(data = gap2011, mapping = aes(fertility, infant_mortality, color = continent, size = population)) +
-  geom_point() +
-  geom_smooth()</code></pre>
-<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
-<pre><code>## Warning: Removed 7 rows containing non-finite values (stat_smooth).</code></pre>
-<pre><code>## Warning: Removed 7 rows containing missing values (geom_point).</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-</div>
-<div id="infant-mortality" class="section level1">
-<h1>Infant mortality</h1>
-<pre class="r"><code>ggplot(gap2011) +
-  geom_point(mapping = aes(x = gdp/population, infant_mortality, color = continent))</code></pre>
-<pre><code>## Warning: Removed 19 rows containing missing values (geom_point).</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
 
 

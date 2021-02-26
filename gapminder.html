@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Nina" />
 
 
-<title>gapminder</title>
+<title>gapminder.utf8</title>
 
 <script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -301,13 +300,14 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">gapminder</h1>
-<h4 class="author">Nina</h4>
-<h4 class="date">2/26/2021</h4>
 
 </div>
 
 
+<div id="gapminder" class="section level1">
+<h1>gapminder</h1>
+<p>Nina 2/26/2021</p>
+</div>
 <div id="data" class="section level1">
 <h1>Data</h1>
 <p>We’re using ggplot to visually explore global trends in public health and economics compiled by the <a href="https://www.gapminder.org/about/">Gapminder project</a>. This project was pioneered by <a href="https://www.ted.com/speakers/hans_rosling">Hans Rosling</a>, who is famous for describing the prosperity of nations over time through famines, wars and other historic events with this beautiful data visualization in his <a href="https://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen">2006 TED Talk: The best stats you’ve ever seen</a>.</p>
@@ -325,27 +325,29 @@ gap2011 &lt;- gapminder %&gt;%
 <pre class="r"><code>ggplot(data = gap2011, mapping = aes(fertility, life_expectancy, color = continent)) +
   geom_point() +
   facet_wrap(~continent)</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="gapminder_files/figure-gfm/unnamed-chunk-2-1.png" /><!-- --></p>
 <pre class="r"><code>ggplot(gapminder) +
   geom_boxplot(aes(continent, life_expectancy))</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
+<p><img src="gapminder_files/figure-gfm/unnamed-chunk-2-2.png" /><!-- --></p>
 </div>
 <div id="fertility" class="section level1">
 <h1>Fertility</h1>
 <pre class="r"><code>ggplot(data = gap2011, mapping = aes(fertility, infant_mortality, color = continent, size = population)) +
   geom_point() +
   geom_smooth()</code></pre>
-<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
-<pre><code>## Warning: Removed 7 rows containing non-finite values (stat_smooth).</code></pre>
-<pre><code>## Warning: Removed 7 rows containing missing values (geom_point).</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;
+
+## Warning: Removed 7 rows containing non-finite values (stat_smooth).
+
+## Warning: Removed 7 rows containing missing values (geom_point).</code></pre>
+<p><img src="gapminder_files/figure-gfm/unnamed-chunk-3-1.png" /><!-- --></p>
 </div>
 <div id="infant-mortality" class="section level1">
 <h1>Infant mortality</h1>
 <pre class="r"><code>ggplot(gap2011) +
   geom_point(mapping = aes(x = gdp/population, infant_mortality, color = continent))</code></pre>
 <pre><code>## Warning: Removed 19 rows containing missing values (geom_point).</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="gapminder_files/figure-gfm/unnamed-chunk-4-1.png" /><!-- --></p>
 </div>
 
 

@@ -1,0 +1,35 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+## Life expectancy
+
+```{r, include = FALSE}
+
+library(dslabs) #install.packages("dslabs")
+library(tidyverse)
+
+gap2011 <- gapminder %>% 
+  as_tibble() %>% 
+  filter(year == 2011)
+
+```
+
+<br>
+<br>
+
+```{r, echo = FALSE}
+ggplot(data = gap2011, mapping = aes(fertility, life_expectancy, color = continent)) +
+  geom_point() +
+  facet_wrap(~continent)
+
+ggplot(gapminder) +
+  geom_boxplot(aes(continent, life_expectancy))
+```
+
